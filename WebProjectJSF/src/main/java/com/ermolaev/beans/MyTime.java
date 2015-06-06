@@ -15,6 +15,7 @@ public class MyTime implements Serializable {
 	@PostConstruct
 	public void init()
 	{
+		System.out.println("MyTime init");
 		now = new Date().toGMTString();
 	}
 

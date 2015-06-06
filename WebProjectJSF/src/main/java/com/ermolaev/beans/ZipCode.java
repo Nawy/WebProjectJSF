@@ -15,6 +15,7 @@ public class ZipCode implements Serializable {
 	@PostConstruct
 	public void init()
 	{
+		System.out.println("ZipCode init");
 		code = 355047;
 	}
 

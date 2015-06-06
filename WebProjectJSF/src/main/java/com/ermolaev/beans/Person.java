@@ -16,7 +16,7 @@ public class Person implements Serializable {
 	@PostConstruct
 	public void init()
 	{
-		System.out.println("Person init!");
+		System.out.println("Person init");
 		firstName = "Ivan";
 		lastName = "Ermolaev";
 	}

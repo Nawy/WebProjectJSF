@@ -15,6 +15,7 @@ public class City implements Serializable {
 	@PostConstruct
 	public void init()
 	{
+		System.out.println("City init");
 		name = "Stavropol";
 	}
 

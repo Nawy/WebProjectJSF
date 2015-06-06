@@ -15,6 +15,7 @@ public class Salary implements Serializable {
 	@PostConstruct
 	public void init()
 	{
+		System.out.println("Salary init");
 		this.value = 500.0f;
 	}
 
