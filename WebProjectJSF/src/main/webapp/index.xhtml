@@ -1,14 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"    
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
       xmlns:h="http://java.sun.com/jsf/html">
  
     <h:head>
     	<title>Hello, dear #{person.firstName} #{person.lastName}</title>
     </h:head>
     <h:body bgcolor="white">
-    	<h2>His name is #{person.firstName}</h2>
-    	<h2>His family name is #{person.lastName}</h2>
+    	
+    	<h:form>
+    		<h:inputText id="firstName" value="#{person.firstName}"></h:inputText>
+    		<h:inputText id="lastName" value="#{person.lastName}"></h:inputText>
+    		<h:commandButton value="Save">
+    			<f:ajax execute="firstName" render="firstNameOutput"/>
+    			<f:ajax execute="lastName" render="lastNameOutput"/>
+    		</h:commandButton><br />
+    		
+    		<h:inputText id="zipCode" value="#{zipCode.code}"></h:inputText>
+    		<h:commandButton value="Save">
+    			<f:ajax execute="zipCode" render="zipCodeOut"/>
+    		</h:commandButton><br />
+    		
+     		<h:inputText id="city" value="#{city.name}"></h:inputText>
+    		<h:commandButton value="Save">
+    			<f:ajax execute="city" render="cityOut"/>
+    		</h:commandButton><br />
+    		
+     		<h:inputText id="salary" value="#{salary.value}"></h:inputText>
+    		<h:commandButton value="Save">
+    			<f:ajax execute="salary" render="salaryOut"/>
+    		</h:commandButton>   	<br />	
+    		<table>
+    			<tr>
+    				<td>First Name:</td>
+    				<td><h:outputText id="firstNameOutput" value="#{person.firstName}"></h:outputText></td>
+    			</tr>
+    			<tr>
+    				<td>Last Name:</td>
+    				<td><h:outputText id="lastNameOutput" value="#{person.lastName}"></h:outputText></td>
+    			</tr>
+    			<tr>
+    				<td>Zip Code:</td>
+    				<td><h:outputText id="zipCodeOut" value="#{zipCode.code}"></h:outputText></td>
+    			</tr>
+    			<tr>
+    				<td>City:</td>
+    				<td><h:outputText id="cityOut" value="#{city.name}"></h:outputText></td>
+    			</tr>
+    			<tr>
+    				<td>Salary:</td>
+    				<td><h:outputText id="salaryOut" value="#{salary.value}"></h:outputText></td>
+    			</tr>
+    			<tr>
+    				<td>My Time:</td>
+    				<td>#{myTime.now}</td>
+    			</tr>
+    		</table>
+			
+			<h:commandButton action="mypage" value="Go To My Page" />
+    	</h:form>
     </h:body>
 </html>

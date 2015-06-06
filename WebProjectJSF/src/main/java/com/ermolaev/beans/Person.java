@@ -1,6 +1,7 @@
 package com.ermolaev.beans;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -15,6 +16,7 @@ public class Person implements Serializable {
 	@PostConstruct
 	public void init()
 	{
+		System.out.println("Person init!");
 		firstName = "Ivan";
 		lastName = "Ermolaev";
 	}
